@@ -1,0 +1,6 @@
+libpowersc_a-psc_misc.o: utils/psc_misc.cpp utils/psc_misc.h \
+ utils/../../config.h
+
+utils/psc_misc.h:
+
+utils/../../config.h:

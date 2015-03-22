@@ -1,0 +1,87 @@
+2005-01-28  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   Modified files:
+
+	* src/base/util/psc_randgen.{h, cpp}: added a function that
+   sort a random number with the number of bits specified.
+   The configure files were also modified to include the math
+   library.
+
+2004-12-19  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   Modified files:
+
+	* src/base/psc_sampler.{h, cpp}: added a method that returns
+   the total monitored time and some other minor changes.
+	* src/base/psc_obj_rep.cpp: changed the method print_entries,
+   to printout the total and average transition counts, and also
+   to inform if the simulation was sampled or not.
+
+2004-12-16  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   Added files:
+   
+	* src/base/psc_objinfo_if.h: interface methods to the
+   psc_objinfo class.
+
+   Modified files:
+
+	* src/powersc.h: added the macro PSC_FULL_SAMPLING
+	* src/base/psc_obj_rep.{h, cpp}: added the method full_sampling,
+   changed some member variable declarations and adapted the
+   class psc_obj_repository to use the pointer to the psc_objinfo
+   interface.
+	* src/base/psc_objinfo.h: modified the updating method that
+   posts the toggle count information to the power objects database.
+   The class psc_objinfo was modified to implement the interface
+   psc_objinfo_if.
+	* src/base/psc_sampler.{h, cpp}: added the capability to
+   use (or not) the monitoring of the full simulation.
+
+2004-12-15  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   Added files:
+   
+	* src/base/psc_obj_rep_base.h: interface methods defined in
+   the class psc_obj_repository_base. These methods must be
+   implemented by its derived class (psc_obj_repository).
+   These methods define the public API seen by the psc_sampler
+   class (See below).
+
+   Modified files:
+   
+	* src/powersc.h: removed the macro that instantiates the
+   psc_sampler object (deprecated).   
+	* src/base/psc_sampler.{h, cpp}: Implemented the main class and
+   the algorithm responsible to manage the sampling of the simulation.
+	* src/base/psc_obj_rep.{h, cpp}: adapted the psc_obj_repository
+   class to work together with the psc_sampler class. Also, it has been
+   added methods to compute the total and average toggle counts gathered.
+	* src/base/psc_objinfo.h: adapted the psc_objinfo class to work together
+   with the psc_sampler class.
+
+
+2004-12-07  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+
+   Added the module psc_sampler, responsible for sample
+   toggle counts throughout the simulation.
+   
+   Changed the registration of the psc_objinfo object
+   from its destruction to the first time it is used.
+
+   Updated configure.in and Makefile.am.
+
+2004-12-03  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   More performance improvements.
+
+	* src/base/psc_objinfo.h: only set an ID for the object
+   when it is used, ignoring temporary objects.
+	* src/psc_signal.h: force the setting of an ID for the object
+   previously to its use.
+	* src/psc_bit.{h, cpp}: minor changes
+
+2004-12-02  Felipe Vieira Klein  <felipe.klein@ic.unicamp.br>
+   Modifications in the update_toggle_count to improve simulation
+   performance.
+   
+	* src/psc_bv.h: updated bit_diff to use the pre-calculated toggle
+   counts from psc_tables.
+	* src/base/psc_objinfo.h: replaced the pending stack for two member
+   variables to hold the previous and the new value for the object.
+   
