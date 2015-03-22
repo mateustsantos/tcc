@@ -1,0 +1,11 @@
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.011204
+Simulation advance (seconds):	0.009492
+Lock Access:	516
+Router Access:	1079976
+Memory Reads:	868498 
+Memory Writes:	210962

@@ -1,0 +1,85 @@
+------------ PowerSC - A SystemC Extension for Power ------------
+
+Author: Felipe Klein <klein@ic.unicamp.br>
+
+This is the release 0.9.0 of the PowerSC Library, a SystemC 
+extension developed aiming at the power analysis/optimization 
+of SystemC models.
+
+PowerSC is currently an ongoing project at the Computer Systems 
+Laboratory (LSC), located at the Institute of Computing, 
+UNICAMP, Brazil.
+
+For further information about the LSC, other projects and 
+so on, please refer to: http://www.lsc.ic.unicamp.br
+
+Any comments, problems and suggestions regarding the PowerSC,
+feel free to contact the author.
+
+Contents:
+
+	1. Installation
+	2. Examples
+	2. User Documentation
+	3. Release Notes
+
+
+1. Installation
+---------------
+
+Please read the INSTALL file.
+
+2. Examples
+-----------
+
+After the installation, if it was succesful, you will have
+the example models under the directory 'examples/' built
+and ready to run with PowerSC.
+
+But if you want to use the usual SystemC executable 
+specification, just type the following command under the
+desired example directory
+
+	make clean all-sc
+
+This command builds the model without the PowerSC.
+
+2. User Documentation
+---------------------
+
+We have no user documentation yet. Sorry for the inconvenience.
+Please refer to the release notes below for some information
+about this release.
+
+3. Release Notes
+----------------
+
+Current PowerSC release, 0.9.0, has been tested under the following 
+platform:
+ - OS: Linux (2.4.x, 2.6.x)
+ - GCC versions: 3.3.x
+ - SystemC release: 2.1 (not the 2.1.v1)
+
+
+PowerSC works for SystemC models, and we have the following
+supported types:
+ - sc_signal
+ - sc_uint
+ - sc_int
+ - sc_logic
+ - sc_bit
+ - sc_lv
+ - sc_bv
+ - sc_clock
+
+
+Known limitation:
+ - You cannot use 'sensitive_pos' or 'sensitive_neg' for data types
+ like sc_uint, sc_int and others in PowerSC. This is only available
+ for the sc_clock type. 
+
+To overcome this situation, currently we need to modify the code in
+the sc_sensitive SystemC class. We do not intend to do that, but to
+provide a solution without modifying any line of the SystemC code. 
+We hope to solve this problem as soon as possible.
+
