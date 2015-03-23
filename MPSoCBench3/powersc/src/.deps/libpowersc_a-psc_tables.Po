@@ -1,3 +1,0 @@
-libpowersc_a-psc_tables.o: utils/psc_tables.cpp utils/psc_tables.h
-
-utils/psc_tables.h:

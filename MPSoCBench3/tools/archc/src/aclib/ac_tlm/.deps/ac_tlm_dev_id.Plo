@@ -1,3 +1,0 @@
-ac_tlm_dev_id.lo: ac_tlm_dev_id.cpp ac_tlm_dev_id.H
-
-ac_tlm_dev_id.H:

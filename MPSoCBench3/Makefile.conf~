@@ -1,9 +1,0 @@
-export SYSTEMC:= /home/felippi/tools2/MPSoCBench/tools/systemc
-export TLM_PATH := /home/felippi/tools2/MPSoCBench/tools/systemc/include
-export ARCHC_PATH := /home/felippi/tools2/MPSoCBench/tools/archc
-export ARP:= /home/felippi/tools2/MPSoCBench
-export POWERSC_PATH := /home/felippi/tools2/MPSoCBench/powersc
-export PATH:=/l/archc/compilers/arm/bin:/l/archc/compilers/bin:$(ARCHC_PATH)/bin:$(PATH)
-export HOST_OS:= linux64
-export LD_LIBRARY_PATH:=/home/felippi/tools2/MPSoCBench/tools/systemc/lib-linux64:$(LD_LIBRARY_PATH)
-
