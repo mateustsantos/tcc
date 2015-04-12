@@ -796,7 +796,10 @@ int main(int argc, char** argv) {
     COMMENT(INDENT[1],"Virtual destructor declaration.");
     fprintf( output, "%svirtual ~%s_arch() {};\n\n", INDENT[1], project_name);
 
-
+	 //OBS1:declaracao de global id e implementacao da funcao getid
+	fprintf( output, "%sstatic int globalId;\n", INDENT[1]);
+	fprintf( output, "%sint getId() { return id.read(); }\n",INDENT[1]);
+	//fim OBS1
     fprintf( output, "};\n\n"); //End of ac_resources class
 
     fprintf( output, "#endif  //_%s_ARCH_H\n", upper_project_name);
@@ -1367,7 +1370,7 @@ int main(int argc, char** argv) {
     if (ACABIFlag)
       fprintf( output, "%s%s_syscall syscall;\n", INDENT[1], project_name );
 
-    /* current instruction ID */
+    /* current instruction ID AQUI*/
     fprintf(output, "%sint cur_instr_id;\n\n", INDENT[1]);
     /* ac_helper */
     if (helper_contents)
@@ -1615,7 +1618,7 @@ int main(int argc, char** argv) {
 
 
       fprintf( output, "%sbool start_up;\n", INDENT[1]);
-      fprintf( output, "%sunsigned id;\n\n", INDENT[1]);
+      //fprintf( output, "%sunsigned id;\n\n", INDENT[1]);//AQUI
       fprintf( output, "%svoid behavior();\n\n", INDENT[1]);
 
       if(pstage->id==1 && ACDecCacheFlag){
@@ -1785,7 +1788,7 @@ int main(int argc, char** argv) {
       fprintf( output, "%scache_item_t* DEC_CACHE;\n\n", INDENT[1]);
     }
 
-    fprintf( output, "%sunsigned id;\n\n", INDENT[1]);
+    //fprintf( output, "%sunsigned id;\n\n", INDENT[1]); // AQUI
     fprintf( output, "%sbool start_up;\n", INDENT[1]);
     fprintf( output, "%sunsigned* instr_dec;\n", INDENT[1]);
     fprintf( output, "%sac_instr_t* instr_vec;\n\n", INDENT[1]);
@@ -1839,7 +1842,9 @@ int main(int argc, char** argv) {
     fprintf( output,"%shas_delayed_load = false; \n", INDENT[2]);
 
     fprintf( output, "%sstart_up=1;\n", INDENT[2]);
-    fprintf( output, "%sid = %d;\n\n", INDENT[2], 1);
+     //OBS2: 
+    fprintf( output, "%sid.write(globalId++);\n", INDENT[2]);
+	//OBS2 FIM
 
     if (ACGDBIntegrationFlag)
       fprintf(output, "%sgdbstub = new AC_GDB<%s_parms::ac_word>(this, %s_parms::GDB_PORT_NUM);\n\n", INDENT[2], project_name, project_name);
@@ -2793,7 +2798,8 @@ void CreateArchImpl() {
     		fprintf(output, "%s%s(*this, %s_stg)", INDENT[1], pstorage->name, pstorage->name);
     	    } else {
     		//It is an ac_cache object.
-    		fprintf(output, "%s%s(%s)", INDENT[1], pstorage->name, pstorage->higher->name);
+    		//OBS4:
+    		fprintf(output, "%s%s(%s,globalId)", INDENT[1], pstorage->name, pstorage->higher->name);
 
     		if (HaveMemHier && pstorage->level == 0) {
     		    fprintf(output, ",\n%s%s_if(%s)", INDENT[1], pstorage->name, pstorage->name);
@@ -2912,6 +2918,9 @@ void CreateArchImpl() {
     }*/
 
   fprintf( output, "}\n\n");
+  
+   //OBS3: 
+  fprintf(output, "int %s_arch::globalId = 0;", project_name);
 
 }
 
@@ -4543,7 +4552,7 @@ void EmitInstrExec( FILE *output, int base_indent){
 
   //Pipelined archs can annul an instruction through pipelining flushing.
   if(stage_list || pipe_list ){
-    fprintf( output, "ISA._behavior_instruction( (ac_stage_list) id );\n");
+    fprintf( output, "ISA._behavior_instruction( (ac_stage_list) id );\n");//AQUI
 /*     fprintf( output, "%s(ISA.*(%s_parms::%s_isa::instr_table[ins_id].ac_instr_type_behavior))((ac_stage_list) id);\n", INDENT[base_indent], project_name, project_name); */
 /*     fprintf( output, "%s(ISA.*(%s_parms::%s_isa::instr_table[ins_id].ac_instr_behavior))((ac_stage_list) id);\n", INDENT[base_indent], project_name, project_name); */
   }

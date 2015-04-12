@@ -44,7 +44,7 @@ void mips_syscall::get_buffer(int argn, unsigned char* buf, unsigned int size)
   unsigned int addr = RB[4+argn];
 
   for (unsigned int i = 0; i<size; i++, addr++) {
-    buf[i] = MEM.read_byte(addr);
+    buf[i] = DC_port.read_byte(addr);
   }
 }
 
@@ -53,7 +53,7 @@ void mips_syscall::set_buffer(int argn, unsigned char* buf, unsigned int size)
   unsigned int addr = RB[4+argn];
 
   for (unsigned int i = 0; i<size; i++, addr++) {
-    MEM.write_byte(addr, buf[i]);
+    DC_port.write_byte(addr, buf[i]);
   }
 }
 
@@ -62,7 +62,7 @@ void mips_syscall::set_buffer_noinvert(int argn, unsigned char* buf, unsigned in
   unsigned int addr = RB[4+argn];
 
   for (unsigned int i = 0; i<size; i+=4, addr+=4) {
-    MEM.write(addr, *(unsigned int *) &buf[i]);
+    DC_port.write(addr, *(unsigned int *) &buf[i]);
   }
 }
 

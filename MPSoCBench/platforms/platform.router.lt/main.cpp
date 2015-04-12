@@ -60,6 +60,7 @@ const char *archc_options="";
 #include  "tlm_memory.h"
 #include  "tlm_router.h"
 #include  "tlm_lock.h"
+#include  "tlm_diretorio.h"
 //#include  "tlm_atomic_wrapper.h"
 
 //#define AC_DEBUG
@@ -67,6 +68,7 @@ const char *archc_options="";
 using user::tlm_memory;
 using user::tlm_router;
 using user::tlm_lock;
+using user::tlm_diretorio;
 //using user::tlm_atomic_wrapper;
 
 // Global variables
@@ -107,7 +109,7 @@ int sc_main(int ac, char *av[])
 	tlm_memory mem("mem", 0, MEM_SIZE-1);	// memory
   	tlm_router router("router");			// router
 	tlm_lock locker("locker");			// locker
-	
+	tlm_diretorio dir("dir");
 
   	PROCESSOR_NAME **processors;				// processors
         
@@ -124,11 +126,12 @@ int sc_main(int ac, char *av[])
 	
 	router.MEM_port(mem.target_export);  
     router.LOCK_port(locker.target_export);
+    router.DIR_port(dir.target_export);
        
 	for (int i=0; i<N_WORKERS; i++)
 	{
 		processors[i]->MEM_port(router.target_export);
-
+		
 	}
   
 	// Preparing the arguments

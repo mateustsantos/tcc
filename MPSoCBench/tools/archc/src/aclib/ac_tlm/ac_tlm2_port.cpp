@@ -27,7 +27,7 @@
 // ArchC includes
 #include "ac_tlm2_port.H"
 #include "ac_tlm2_payload.H"
-
+#define	DIR_ADDRESS		   0x30000000
 
 // If you want to debug TLM 2.0, please uncomment the next line
 
@@ -38,7 +38,7 @@
 ac_tlm2_port::ac_tlm2_port(char const* nm, uint32_t sz) : name(nm), size(sz) {
 
  payload = new ac_tlm2_payload();
-
+ payloadExt = new tlm_payload_dir_extension();
  }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -223,7 +223,114 @@ void ac_tlm2_port::read(ac_ptr buf, uint32_t address,
         }
 }
 
+///*
 
+bool ac_tlm2_port::read_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info)
+{
+	int rule=1;
+	//usa o read como base
+	//unsigned char buffer[64];
+	//tlm_payload_dir_extension *payloadExt;
+	//cout << "AC TLM2 IN1" <<endl;
+	payloadExt->setNumberCache(nCache);
+	//cout << "TLM2 read cacheIndex "<< cacheIndex<<endl;
+	//cout << "AC TLM2 IN2" <<endl;
+	payloadExt->setAddress(address);
+	//cout << "AC TLM2 IN3" <<endl;
+	payloadExt->setCacheIndex(cacheIndex);
+	//cout << "AC TLM2 IN4" <<endl;
+	payloadExt->setRule(rule);
+	//cout << "AC TLM2 IN5" <<endl;
+	
+	payload->set_extension(payloadExt);
+	//cout << "AC TLM2 IN6" <<endl;
+	//cout << "get read cacheIndex da tlm2 " << payloadExt->getCacheIndex() <<endl;
+    payload->set_command(tlm::TLM_READ_COMMAND);
+    //cout << "AC TLM2 IN7" <<endl;
+    payload->set_address((sc_dt::uint64)DIR_ADDRESS);
+    //cout << "AC TLM2 IN8" <<endl;
+	
+	//return true;
+    //payload->set_data_ptr(buffer);
+	payload->set_data_length(sizeof(uint32_t));
+	//cout << "AC TLM2 IN9" <<endl;
+	(*this)->b_transport(*payload, time_info);
+	//cout << "AC TLM2 IN10" <<endl;
+	//payload.release_extension(payloadExt);
+	//cout << "get read validation " << payloadExt->getValidation() << endl; 
+	if (payload->is_response_ok())
+	{
+		//cout << "AC TLM2 OUT" <<endl;
+		//cout << "tlm2PORT validation: " << payloadExt->getValidation()<<endl;
+		return payloadExt->getValidation();
+	}
+	//cout << "AC TLM2 OUT" <<endl;
+	
+	return false;
+}
+bool ac_tlm2_port::write_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info)
+{
+	int rule=2;
+	payloadExt->setNumberCache(nCache);
+	//cout << "TLM2 write cacheIndex "<< cacheIndex<<endl;
+	payloadExt->setAddress(address);
+	payloadExt->setCacheIndex(cacheIndex);
+	payloadExt->setRule(rule);
+	payload->set_extension(payloadExt);
+	
+	//cout << "get write cacheIndex da tlm2 " << payloadExt->getCacheIndex() <<endl; 
+	
+    payload->set_command(tlm::TLM_READ_COMMAND);
+    payload->set_address((sc_dt::uint64)DIR_ADDRESS);
+	
+	//return true;
+    //payload->set_data_ptr(buffer);
+	payload->set_data_length(sizeof(uint32_t));
+	(*this)->b_transport(*payload, time_info);
+	//payload.release_extension(payloadExt);
+	//cout << "get write validation " << payloadExt->getValidation() << endl;
+	if (payload->is_response_ok())
+	{
+		//cout << "AC TLM2 OUT" <<endl;
+		//cout << "tlm2PORT validation: " << payloadExt->getValidation()<<endl;
+		return payloadExt->getValidation();
+	}
+	//cout << "AC TLM2 OUT" <<endl;
+	return true;
+}
+bool ac_tlm2_port::check_dir(uint32_t address,  int nCache, sc_core::sc_time& time_info)
+{
+	int rule=3;
+	//usa o read como base
+	//unsigned char buffer[64];
+	//tlm_payload_dir_extension *payloadExt;
+	//cout << "AC TLM2 IN" <<endl;
+	payloadExt->setNumberCache(nCache);
+	payloadExt->setAddress(address);
+	payloadExt->setRule(rule);
+	
+	payload->set_extension(payloadExt);
+	
+    payload->set_command(tlm::TLM_READ_COMMAND);
+    payload->set_address((sc_dt::uint64)DIR_ADDRESS);
+	
+	//return true;
+    //payload->set_data_ptr(buffer);
+	payload->set_data_length(sizeof(uint32_t));
+	(*this)->b_transport(*payload, time_info);
+	//payload.release_extension(payloadExt);
+
+	if (payload->is_response_ok())
+	{
+		//cout << "AC TLM2 OUT" <<endl;
+		//cout << "tlm2PORT validation: " << payloadExt->getValidation()<<endl;
+		return payloadExt->getValidation();
+	}
+	//cout << "AC TLM2 OUT" <<endl;
+	return payloadExt->getValidation();
+	//return false;
+}
+//*/
 /** 
  * Writes a single word.
  * 

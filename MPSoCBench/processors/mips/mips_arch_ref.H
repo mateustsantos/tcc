@@ -43,10 +43,13 @@ public:
   ac_memport<mips_parms::ac_word, mips_parms::ac_Hword>& MEM;
   ac_write_back_cache<64, 16, 2, mips_parms::ac_word, ac_memport<mips_parms::ac_word, mips_parms::ac_Hword>, ac_fifo_replacement_policy>& IC;
   ac_memport<mips_parms::ac_word, mips_parms::ac_Hword> &IC_port;
+  ac_write_through_cache<256, 16, 2, mips_parms::ac_word, ac_memport<mips_parms::ac_word, mips_parms::ac_Hword>, ac_fifo_replacement_policy>& DC;
+  ac_memport<mips_parms::ac_word, mips_parms::ac_Hword> &DC_port;
   ac_regbank<32, mips_parms::ac_word, mips_parms::ac_Dword>& RB;
   ac_reg<mips_parms::ac_word>& npc;
   ac_reg<mips_parms::ac_word>& hi;
   ac_reg<mips_parms::ac_word>& lo;
+  ac_reg<mips_parms::ac_word>& id;
 
   //!Constructor.
    mips_arch_ref(mips_arch& arch);

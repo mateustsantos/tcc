@@ -86,7 +86,7 @@ void ac_behavior( lb )
 {
   char byte;
   dbg_printf("lb r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
-  byte = MEM.read_byte(RB[rs]+ imm);
+  byte = DC_port.read_byte(RB[rs]+ imm);
   RB[rt] = (ac_Sword)byte ;
   dbg_printf("Result = %#x\n", RB[rt]);
 };
@@ -96,7 +96,7 @@ void ac_behavior( lbu )
 {
   unsigned char byte;
   dbg_printf("lbu r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
-  byte = MEM.read_byte(RB[rs]+ imm);
+  byte = DC_port.read_byte(RB[rs]+ imm);
   RB[rt] = byte ;
   dbg_printf("Result = %#x\n", RB[rt]);
 };
@@ -106,7 +106,7 @@ void ac_behavior( lh )
 {
   short int half;
   dbg_printf("lh r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
-  half = MEM.read_half(RB[rs]+ imm);
+  half = DC_port.read_half(RB[rs]+ imm);
   RB[rt] = (ac_Sword)half ;
   dbg_printf("Result = %#x\n", RB[rt]);
 };
@@ -115,7 +115,7 @@ void ac_behavior( lh )
 void ac_behavior( lhu )
 {
   unsigned short int  half;
-  half = MEM.read_half(RB[rs]+ imm);
+  half = DC_port.read_half(RB[rs]+ imm);
   RB[rt] = half ;
   dbg_printf("Result = %#x\n", RB[rt]);
 };
@@ -124,7 +124,7 @@ void ac_behavior( lhu )
 void ac_behavior( lw )
 {
   dbg_printf("lw r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
-  RB[rt] = MEM.read(RB[rs]+ imm);
+  RB[rt] = DC_port.read(RB[rs]+ imm);
   dbg_printf("Result = %#x\n", RB[rt]);
 };
 
@@ -137,7 +137,7 @@ void ac_behavior( lwl )
 
   addr = RB[rs] + imm;
   offset = (addr & 0x3) * 8;
-  data = MEM.read(addr & 0xFFFFFFFC);
+  data = DC_port.read(addr & 0xFFFFFFFC);
   data <<= offset;
   data |= RB[rt] & ((1<<offset)-1);
   RB[rt] = data;
@@ -153,7 +153,7 @@ void ac_behavior( lwr )
 
   addr = RB[rs] + imm;
   offset = (3 - (addr & 0x3)) * 8;
-  data = MEM.read(addr & 0xFFFFFFFC);
+  data = DC_port.read(addr & 0xFFFFFFFC);
   data >>= offset;
   data |= RB[rt] & (0xFFFFFFFF << (32-offset));
   RB[rt] = data;
@@ -166,7 +166,7 @@ void ac_behavior( sb )
   unsigned char byte;
   dbg_printf("sb r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
   byte = RB[rt] & 0xFF;
-  MEM.write_byte(RB[rs] + imm, byte);
+  DC_port.write_byte(RB[rs] + imm, byte);
   dbg_printf("Result = %#x\n", (int) byte);
 };
 
@@ -176,7 +176,7 @@ void ac_behavior( sh )
   unsigned short int half;
   dbg_printf("sh r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
   half = RB[rt] & 0xFFFF;
-  MEM.write_half(RB[rs] + imm, half);
+  DC_port.write_half(RB[rs] + imm, half);
   dbg_printf("Result = %#x\n", (int) half);
 };
 
@@ -184,7 +184,7 @@ void ac_behavior( sh )
 void ac_behavior( sw )
 {
   dbg_printf("sw r%d, %d(r%d)\n", rt, imm & 0xFFFF, rs);
-  MEM.write(RB[rs] + imm, RB[rt]);
+  DC_port.write(RB[rs] + imm, RB[rt]);
   dbg_printf("Result = %#x\n", RB[rt]);
 };
 
@@ -199,8 +199,8 @@ void ac_behavior( swl )
   offset = (addr & 0x3) * 8;
   data = RB[rt];
   data >>= offset;
-  data |= MEM.read(addr & 0xFFFFFFFC) & (0xFFFFFFFF << (32-offset));
-  MEM.write(addr & 0xFFFFFFFC, data);
+  data |= DC_port.read(addr & 0xFFFFFFFC) & (0xFFFFFFFF << (32-offset));
+  DC_port.write(addr & 0xFFFFFFFC, data);
   dbg_printf("Result = %#x\n", data);
 };
 
@@ -215,8 +215,8 @@ void ac_behavior( swr )
   offset = (3 - (addr & 0x3)) * 8;
   data = RB[rt];
   data <<= offset;
-  data |= MEM.read(addr & 0xFFFFFFFC) & ((1<<offset)-1);
-  MEM.write(addr & 0xFFFFFFFC, data);
+  data |= DC_port.read(addr & 0xFFFFFFFC) & ((1<<offset)-1);
+  DC_port.write(addr & 0xFFFFFFFC, data);
   dbg_printf("Result = %#x\n", data);
 };
 

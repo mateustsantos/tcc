@@ -117,6 +117,55 @@ public:
     return aux_word;
   }
 
+	///*
+	
+	  
+  bool read_dir(uint32_t address, int cacheIndex, int nCache)
+   {
+	  //cout << "ac_memport.H" <<endl;
+	  sc_core::sc_time time = sc_core::sc_time(0, SC_NS);
+	  bool resposta=false;
+	  //cout << "MEM IN" << endl;
+	  //cout << "MEM read cacheIndex: " <<cacheIndex <<endl; 
+	  resposta = storage->read_dir(address, cacheIndex, nCache, time);
+	//  if(teste)
+	//	  cout << "teste verdadeiro" <<endl;
+	//  cout << "teste: " << teste <<endl;
+	  setTimeInfo (time);
+	  //cout << "MEM OUT" << endl;
+	  return resposta;
+   }
+  bool write_dir(uint32_t address, int cacheIndex, int nCache)
+  {
+	  sc_core::sc_time time = sc_core::sc_time(0, SC_NS);
+	  bool resposta=false;
+	  //cout << "MEM IN" << endl;
+	  //cout << "MEM write cacheIndex: " <<cacheIndex <<endl; 
+	  resposta = storage->write_dir(address, cacheIndex, nCache, time);
+	//  if(teste)
+	//	  cout << "teste verdadeiro" <<endl;
+	//  cout << "teste: " << teste <<endl;
+	  setTimeInfo (time);
+	  //cout << "MEM OUT" << endl;
+	  return resposta;
+  }
+  
+  bool check_dir(uint32_t address, int nCache)
+  {
+	  sc_core::sc_time time = sc_core::sc_time(0, SC_NS);
+	  bool resposta=false;
+	  //cout << "MEM IN" << endl;
+	  resposta = storage->check_dir(address, nCache, time);
+
+	  setTimeInfo (time);
+	  //cout << "MEM OUT" << endl;
+	  return resposta;
+
+  }
+
+	//*/
+
+
   ///Reads a byte
   inline uint8_t read_byte(uint32_t address) {
 

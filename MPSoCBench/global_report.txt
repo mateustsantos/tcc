@@ -9,3 +9,1035 @@ Lock Access:	516
 Router Access:	1079976
 Memory Reads:	868498 
 Memory Writes:	210962
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	6.448240
+Simulation advance (seconds):	0.009492
+Lock Access:	516
+Router Access:	1079976
+Memory Reads:	868498 
+Memory Writes:	210962
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.111117
+Simulation advance (seconds):	0.030493
+Lock Access:	1036
+Router Access:	863094
+Memory Reads:	22365 
+Memory Writes:	839693
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Lock Access:	0
+Router Access:	0
+Memory Reads:	0 
+Memory Writes:	0
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Lock Access:	0
+Router Access:	0
+Memory Reads:	0 
+Memory Writes:	0
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Lock Access:	0
+Router Access:	0
+Memory Reads:	0 
+Memory Writes:	0
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	1.247400
+Simulation advance (seconds):	0.030493
+Lock Access:	1036
+Router Access:	863094
+Memory Reads:	22365 
+Memory Writes:	839693
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.199912
+Simulation advance (seconds):	0.030472
+Lock Access:	516
+Router Access:	862574
+Memory Reads:	22365 
+Memory Writes:	839693
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	1.451301
+Simulation advance (seconds):	0.030446
+Lock Access:	516
+Router Access:	857120
+Memory Reads:	12756 
+Memory Writes:	843848
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	1.213037
+Simulation advance (seconds):	0.030446
+Lock Access:	516
+Router Access:	857120
+Memory Reads:	12756 
+Memory Writes:	843848
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.483089
+Simulation advance (seconds):	0.005769
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.630810
+Simulation advance (seconds):	0.005769
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.777419
+Simulation advance (seconds):	0.005769
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.553313
+Simulation advance (seconds):	0.005769
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.352042
+Simulation advance (seconds):	0.005769
+Lock Access:	365
+Lock Access:	54
+Router Access:	378863
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.318887
+Simulation advance (seconds):	0.005769
+Lock Access:	365
+Lock Access:	54
+Router Access:	378863
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.121420
+Simulation advance (seconds):	0.005769
+Lock Access:	365
+Lock Access:	54
+Router Access:	378863
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.735973
+Simulation advance (seconds):	0.005769
+Lock Access:	365
+Lock Access:	54
+Router Access:	378863
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	99.489943
+Simulation advance (seconds):	0.003350
+Lock Access:	443297
+Lock Access:	54
+Router Access:	1319283
+Memory Reads:	505764 
+Memory Writes:	370168
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.262589
+Simulation advance (seconds):	0.000069
+Lock Access:	14863
+Lock Access:	1
+Router Access:	85744
+Memory Reads:	14332 
+Memory Writes:	56548
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.838959
+Simulation advance (seconds):	0.001797
+Lock Access:	92851
+Lock Access:	54
+Router Access:	471349
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.694829
+Simulation advance (seconds):	0.001797
+Lock Access:	93216
+Lock Access:	54
+Router Access:	471714
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	8.142543
+Simulation advance (seconds):	0.001797
+Lock Access:	93216
+Lock Access:	54
+Router Access:	471714
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	15.377298
+Simulation advance (seconds):	0.001797
+Lock Access:	93216
+Lock Access:	54
+Router Access:	471714
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.746818
+Simulation advance (seconds):	0.001797
+Lock Access:	93216
+Lock Access:	54
+Router Access:	471714
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	35.658481
+Simulation advance (seconds):	0.001785
+Lock Access:	412934
+Lock Access:	54
+Router Access:	791432
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	6.339523
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	6.310577
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.662337
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.428893
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.107356
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.163407
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.273053
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.432550
+Simulation advance (seconds):	0.001785
+Lock Access:	411976
+Lock Access:	54
+Router Access:	790474
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.989956
+Simulation advance (seconds):	0.005769
+Lock Access:	0
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	0.825822
+Simulation advance (seconds):	0.005769
+Lock Access:	0
+Lock Access:	54
+Router Access:	378498
+Memory Reads:	8500 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	12.474488
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	4.980260
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	5.127798
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	4.151187
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	2.222433
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	4.061126
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	4.068061
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	3.273143
+Simulation advance (seconds):	0.026623
+Lock Access:	0
+Lock Access:	139
+Router Access:	12431195
+Memory Reads:	10378424 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.412448
+Simulation advance (seconds):	0.001901
+Lock Access:	934381
+Lock Access:	253
+Router Access:	1873130
+Memory Reads:	58168 
+Memory Writes:	880328
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.259137
+Simulation advance (seconds):	0.001901
+Lock Access:	934381
+Lock Access:	253
+Router Access:	1873130
+Memory Reads:	58168 
+Memory Writes:	880328
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	2.927511
+Simulation advance (seconds):	0.001901
+Lock Access:	934381
+Lock Access:	253
+Router Access:	1873130
+Memory Reads:	58168 
+Memory Writes:	880328
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	9.206405
+Simulation advance (seconds):	0.001901
+Lock Access:	940581
+Lock Access:	253
+Router Access:	1879330
+Memory Reads:	58168 
+Memory Writes:	880328
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	1.625985
+Simulation advance (seconds):	0.005309
+Lock Access:	412952
+Lock Access:	54
+Router Access:	2069482
+Memory Reads:	1286532 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	3.871025
+Simulation advance (seconds):	0.005309
+Lock Access:	412952
+Lock Access:	54
+Router Access:	2069482
+Memory Reads:	1286532 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running sha.mips.x
+
+Total Time Taken (seconds):	2.437628
+Simulation advance (seconds):	0.005309
+Lock Access:	412952
+Lock Access:	54
+Router Access:	2069482
+Memory Reads:	1286532 
+Memory Writes:	369944
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	20.802118
+Simulation advance (seconds):	0.024677
+Lock Access:	3802937
+Lock Access:	133
+Router Access:	19021762
+Memory Reads:	13168072 
+Memory Writes:	2050620
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	22.028474
+Simulation advance (seconds):	0.024597
+Lock Access:	3799307
+Lock Access:	135
+Router Access:	19003622
+Memory Reads:	13151548 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	4.156693
+Simulation advance (seconds):	0.024597
+Lock Access:	3799307
+Lock Access:	135
+Router Access:	19003622
+Memory Reads:	13151548 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+Total Time Taken (seconds):	20.479120
+Simulation advance (seconds):	0.024737
+Lock Access:	7619831
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	3.125801
+Simulation advance (seconds):	0.014830
+Lock Access:	1334360
+Lock Access:	727
+Router Access:	6679243
+Memory Reads:	4490476 
+Memory Writes:	853680
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	3.838923
+Simulation advance (seconds):	0.008118
+Lock Access:	1471928
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	3.222873
+Simulation advance (seconds):	0.002813
+Lock Access:	1569064
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	5.398076
+Simulation advance (seconds):	0.002813
+Lock Access:	1569064
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 2 cores running sha.mips.x
+
+Total Time Taken (seconds):	6.186733
+Simulation advance (seconds):	0.008204
+Lock Access:	2803317
+Lock Access:	137
+Router Access:	5889590
+Memory Reads:	1033504 
+Memory Writes:	2052632
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+Total Time Taken (seconds):	6.604024
+Simulation advance (seconds):	0.008280
+Lock Access:	4732222
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running sha.mips.x
+
+Total Time Taken (seconds):	17.420580
+Simulation advance (seconds):	0.008280
+Lock Access:	5639623
+Lock Access:	472
+Router Access:	8616511
+Memory Reads:	56020 
+Memory Writes:	2920396
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.628868
+Simulation advance (seconds):	0.002813
+Lock Access:	1569064
+Lock Access:	1045
+Router Access:	2617889
+Memory Reads:	75848 
+Memory Writes:	971932
+
+************************************************************************
+Platform ./platform.router.lt.x with 16 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running dijkstra.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running sha.mips.x
+
+
+************************************************************************
+Platform ./platform.router.lt.x with 8 cores running sha.mips.x
+
+Total Time Taken (seconds):	89.009977
+Simulation advance (seconds):	0.025317
+Lock Access:	27882166
+Lock Access:	1732
+Router Access:	40756686
+Memory Reads:	6884312 
+Memory Writes:	5988476
+
+************************************************************************
+Platform ./platform.router.lt.x with 16 cores running sha.mips.x
+
+Total Time Taken (seconds):	95.000831
+Simulation advance (seconds):	0.010064
+Lock Access:	27129050
+Lock Access:	6212
+Router Access:	46034954
+Memory Reads:	4762560 
+Memory Writes:	14137132
+
+************************************************************************
+Platform ./platform.router.lt.x with 32 cores running sha.mips.x
+
+Total Time Taken (seconds):	460.548616
+Simulation advance (seconds):	0.013157
+Lock Access:	66468967
+Lock Access:	25329
+Router Access:	105372052
+Memory Reads:	8492708 
+Memory Writes:	30385048
+
+************************************************************************
+Platform ./platform.router.lt.x with 64 cores running sha.mips.x
+
+Total Time Taken (seconds):	-505.173026
+Simulation advance (seconds):	0.033442
+Lock Access:	295190416
+Lock Access:	98629
+Router Access:	391758977
+Memory Reads:	21651788 
+Memory Writes:	74818144
+
+************************************************************************
+Platform ./platform.router.lt.x with 4 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	12.029828
+Simulation advance (seconds):	0.008131
+Lock Access:	3853935
+Lock Access:	1476
+Router Access:	6221311
+Memory Reads:	1353728 
+Memory Writes:	1012172
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.652334
+Simulation advance (seconds):	0.028637
+Lock Access:	2361002
+Lock Access:	516
+Router Access:	7509886
+Memory Reads:	4304520 
+Memory Writes:	843848
+
+************************************************************************
+Platform ./platform.router.lt.x with 1 cores running dijkstra.mips.x
+
+Total Time Taken (seconds):	2.682651
+Simulation advance (seconds):	0.028637
+Lock Access:	2361002
+Lock Access:	516
+Router Access:	7509886
+Memory Reads:	4304520 
+Memory Writes:	843848

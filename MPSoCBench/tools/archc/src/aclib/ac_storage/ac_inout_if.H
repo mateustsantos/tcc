@@ -72,6 +72,19 @@ public:
    * @param n_words Number of words to be read.
    * 
    */
+	
+	///*
+	virtual bool read_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info) =0;
+  
+	virtual bool write_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info) =0;
+  
+	virtual bool check_dir(uint32_t address, int nCache, sc_core::sc_time& time_info) =0;
+	
+	
+	
+	//*/
+	
+	
 
   // = sc_core::sc_time(0,SC_NS)
   virtual void read(ac_ptr buf, uint32_t address,int wordsize, int n_words) = 0;

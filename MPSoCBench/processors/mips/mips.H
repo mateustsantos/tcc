@@ -50,8 +50,6 @@ public:
   mips_parms::mips_isa ISA;
   cache_item_t* DEC_CACHE;
 
-  unsigned id;
-
   bool start_up;
   unsigned* instr_dec;
   ac_instr_t* instr_vec;
@@ -73,8 +71,7 @@ public:
     bhv_pc = 0; 
     has_delayed_load = false; 
     start_up=1;
-    id = 1;
-
+    id.write(globalId++);
   }
   void init_dec_cache() {
     DEC_CACHE = (cache_item_t*) calloc(sizeof(cache_item_t),dec_cache_size);

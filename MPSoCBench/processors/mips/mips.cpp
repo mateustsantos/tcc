@@ -375,6 +375,7 @@ void mips::behavior() {
 
 void mips::init() {
   if (ac_cache_traces.find("IC") != ac_cache_traces.end()) IC.set_trace(*ac_cache_traces["IC"]);
+  if (ac_cache_traces.find("DC") != ac_cache_traces.end()) DC.set_trace(*ac_cache_traces["DC"]);
   set_args(ac_argc, ac_argv);
 #ifdef AC_VERIFY
   set_queue(av[0]);
@@ -406,6 +407,7 @@ void mips::init(int ac, char *av[]) {
   ac_init_app( ac, av);
   APP_MEM->load(appfilename);
   if (ac_cache_traces.find("IC") != ac_cache_traces.end()) IC.set_trace(*ac_cache_traces["IC"]);
+  if (ac_cache_traces.find("DC") != ac_cache_traces.end()) DC.set_trace(*ac_cache_traces["DC"]);
   set_args(ac_argc, ac_argv);
 #ifdef AC_VERIFY
   set_queue(av[0]);
@@ -467,5 +469,7 @@ void mips::PrintStat() {
   ac_arch<mips_parms::ac_word, mips_parms::ac_Hword>::PrintStat();
   std::cerr << "cache: IC\n";
   IC.print_statistics(std::cerr);
+  std::cerr << "cache: DC\n";
+  DC.print_statistics(std::cerr);
 }
 

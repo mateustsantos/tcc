@@ -21,13 +21,17 @@ mips_arch::mips_arch() :
   ac_pc("ac_pc", 0),
   MEM_port("MEM_port", 536870912U),
   MEM(*this, MEM_port),
-  IC(MEM),
+  IC(MEM,globalId),
   IC_if(IC),
   IC_port(*this, IC_if),
+  DC(MEM,globalId),
+  DC_if(DC),
+  DC_port(*this, DC_if),
   RB("RB"),
   npc("npc", 0),
   hi("hi", 0),
-  lo("lo", 0) {
+  lo("lo", 0),
+  id("id", 0) {
 
   ac_mt_endian = mips_parms::AC_MATCH_ENDIAN;
   ac_tgt_endian = mips_parms::AC_PROC_ENDIAN;
@@ -37,3 +41,4 @@ mips_arch::mips_arch() :
 
 }
 
+int mips_arch::globalId = 0;

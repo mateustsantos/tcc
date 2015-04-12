@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Diretorio.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="469" topLine="0" />
+	</File>
+	<File name="Diretorio.h" open="1" top="0" tabpos="2">
+		<Cursor position="89" topLine="0" />
+	</File>
+	<File name="cacheLine.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="101" topLine="0" />
+	</File>
+	<File name="cacheLine.h" open="1" top="0" tabpos="7">
+		<Cursor position="135" topLine="0" />
+	</File>
+	<File name="cacheOfProcessor.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="1407" topLine="18" />
+	</File>
+	<File name="cacheOfProcessor.h" open="1" top="0" tabpos="5">
+		<Cursor position="272" topLine="0" />
+	</File>
+	<File name="common.h" open="1" top="0" tabpos="4">
+		<Cursor position="16" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="949" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

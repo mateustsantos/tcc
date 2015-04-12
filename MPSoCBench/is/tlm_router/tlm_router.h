@@ -75,7 +75,7 @@ class tlm_router :
 public:
   ac_tlm2_port MEM_port;  
   ac_tlm2_port LOCK_port;
-  
+  ac_tlm2_port DIR_port;
   sc_export< ac_tlm2_blocking_transport_if  > target_export;
 
   tlm_router(sc_module_name module_name);

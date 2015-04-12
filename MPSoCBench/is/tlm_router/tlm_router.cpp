@@ -52,7 +52,7 @@
 
 
 #include "tlm_router.h"
-
+#define	DIR_ADDRESS		   0x30000000
 #define measures 1
 
 long unsigned int count_traffic = 0;
@@ -66,7 +66,8 @@ tlm_router::tlm_router( sc_module_name module_name) :
   sc_module( module_name ),
   target_export("target_export"),
   MEM_port("MEM_port", 536870912U), 			
-  LOCK_port("LOCK_PORT", 0U)
+  LOCK_port("LOCK_PORT", 0U),
+  DIR_port ("DIR_port", 0U)
   {
     target_export( *this );
   }
@@ -113,6 +114,12 @@ void tlm_router::b_transport(ac_tlm2_payload& payload, sc_core::sc_time& time_in
 
     	LOCK_port->b_transport(payload, time_info);
 	}
+	
+	else if ((addr == DIR_ADDRESS))
+	{
+		DIR_port->b_transport(payload, time_info);
+	}
+	
     else
     {
     	 printf("\ntlm_router b_transport : invalid address");

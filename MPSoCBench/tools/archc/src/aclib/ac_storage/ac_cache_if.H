@@ -17,6 +17,13 @@ class ac_cache_if : public ac_inout_if {
 	* @param wordsize Word size in bits.
 	* 
 	*/
+	///*
+	virtual bool read_dir (uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info) { return true;}
+	virtual bool write_dir (uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info) { return true;}
+	virtual bool check_dir(uint32_t address, int nCache, sc_core::sc_time& time_info){ return true;}
+	//*/
+	
+	
 	virtual void read(ac_ptr buf, uint32_t address, int wordsize) {
             
 		//printf("\nAC_CACHE_IF::read -> address=%x", address);

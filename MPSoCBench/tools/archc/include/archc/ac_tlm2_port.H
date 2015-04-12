@@ -38,11 +38,12 @@
 #include "ac_inout_if.H"
 #include "ac_tlm_protocol.H"
 #include "ac_tlm_dev_id.H"
-
+#include "/home/felippi/tools2/MPSoCBench/ip/tlm_diretorio/tlm_payload_dir_extension.h"
 //////////////////////////////////////////////////////////////////////////////
 
 // using statements
 using std::string;
+using user::tlm_payload_dir_extension;
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -61,7 +62,7 @@ class ac_tlm2_port : public sc_port<ac_tlm2_blocking_transport_if>,
 private:
     /// Persistent payload used in read/write transactions
     ac_tlm2_payload* payload;     /* PAYLOAD   */
-
+	tlm_payload_dir_extension* payloadExt;
 public:
   string name;
   uint32_t size;
@@ -122,6 +123,15 @@ public:
 	  read(buf, address, wordsize,n_words,time_info);
 
   }
+  ///*
+  virtual bool read_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info);
+  
+  virtual bool write_dir(uint32_t address, int cacheIndex, int nCache, sc_core::sc_time& time_info);
+  
+  virtual bool check_dir(uint32_t address, int nCache, sc_core::sc_time& time_info);
+  //*/
+  
+  
   virtual void write(ac_ptr buf, uint32_t address, int wordsize)
   {
 	  sc_core::sc_time time_info(0,SC_NS);

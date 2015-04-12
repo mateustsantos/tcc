@@ -88,11 +88,12 @@ void tlm_lock::b_transport( ac_tlm2_payload &payload, sc_core::sc_time &time_inf
 	case TLM_READ_COMMAND :     // Packet is a READ one
 	
 		// CORRETO !
+		//cout<< "read LOCK value: " << value << endl;
 		if (readm(value)!=0) resp = 1;
 		else resp = 0;
-
+		//cout<< "read LOCK resp: " << resp << endl;
 		*((uint32_t*)data_pointer) = resp;
-
+		//cout<< "read LOCK resp: " << *((uint32_t*)data_pointer) << endl;
 		//*((uint32_t*)data_pointer) = 0;
 
 		//*((uint32_t*)data_pointer) = value;
@@ -105,19 +106,19 @@ void tlm_lock::b_transport( ac_tlm2_payload &payload, sc_core::sc_time &time_inf
                 break; 
 
 	case TLM_WRITE_COMMAND:     // Packet is a WRITE
-	        
+	     
 		/*if (len == 1) value = *((uint8_t*)data_pointer);
 		else if (len == 2) value = *((uint16_t*)data_pointer); 			
 		else if (len == 4) value = *((uint32_t*)data_pointer);
 		else if (len == 8) value = *((uint64_t*)data_pointer);
 		*/
 
-
+		//cout<< "write LOCK data_pointer: " << *((uint32_t*)data_pointer) << endl;
 		if (*((uint32_t*)data_pointer)==0 ) 
 			value = 0;
 		else 
 			value = 1;
-
+		//cout<< "write LOCK value: " << value << endl;
 		
 		if (LOCK_DEBUG)
 		printf("\nTLM LOCK B_TRANSPORT: write %d in value, *data_pointer-->%d",value,*((uint32_t*)data_pointer));

@@ -69,7 +69,16 @@ class ac_write_back_cache {
 	backing_store &memory;
 	ac_cache_trace *cache_trace;
 	bool trace_active;
-
+	int idCache;
+	 void setId (int id)
+    {
+   		idCache = id;
+    }
+	int getId ()
+    {
+   		return idCache;
+    }
+	
 	address byte_to_word(address a) {
 		return a/sizeof(cpu_word);
 	}
@@ -77,10 +86,10 @@ class ac_write_back_cache {
 		return a*sizeof(cpu_word);
 	}
 	
-	ac_write_back_cache(const ac_write_back_cache &);
+	ac_write_back_cache(const ac_write_back_cache &, int id);
 	
 	public:
-	ac_write_back_cache(backing_store &memory_) : memory(memory_), trace_active(false) {
+	ac_write_back_cache(backing_store &memory_, int id) : memory(memory_), trace_active(false) {
 	}
 	
 	~ac_write_back_cache() {
@@ -99,6 +108,13 @@ class ac_write_back_cache {
 		//printf("\nAC_CACHE WB::read -> address=%x  length=%d", a, length);
 
 		address b = byte_to_word(a);
+		
+		if(a >= 536870912){
+			a = a/block_size*block_size;
+			const cpu_word *d = memory.read_block(a, sizeof(cpu_word));
+			return d;
+		}
+		
 		if (!cache.get_block_for_read(b)) {
 			cache.get_available_block();
 			if (cache.block_status().is_dirty()) {
@@ -124,6 +140,13 @@ class ac_write_back_cache {
 
 
 		address b = byte_to_word(a);
+		
+		if(a >= 0x20000000){
+			a = a/block_size*block_size;
+			memory.write_block(a, d, sizeof(cpu_word));
+			return;	
+		}
+		
 		if (!cache.get_block_for_write(b)) {
 			cache.get_available_block();
 			if (cache.block_status().is_dirty()) {
@@ -178,6 +201,16 @@ class ac_write_through_cache {
 	backing_store &memory;
 	ac_cache_trace *cache_trace;
 	bool trace_active;
+	int idCache;
+	 void setId (int id)
+    {
+	    cout << "ID SET: " << id <<endl;
+   		idCache = id;
+    }
+	int getId ()
+    {
+   		return idCache;
+    }
 	address byte_to_word(address a) {
 		return a/sizeof(cpu_word);
 	}
@@ -185,10 +218,18 @@ class ac_write_through_cache {
 		return a*sizeof(cpu_word);
 	}
 	
-	ac_write_through_cache(const ac_write_through_cache &);
+	ac_write_through_cache(const ac_write_through_cache &, int id)
+	{
+		cout << "ID: "<< id <<endl;
+		setId(id);
+	}
 	
 	public:
-	ac_write_through_cache(backing_store &memory_) : memory(memory_), trace_active(false) {}
+	ac_write_through_cache(backing_store &memory_, int id) : memory(memory_), trace_active(false) {
+		cout << "ID: "<< id <<endl<<endl<<endl<<endl;
+		setId(id);
+		//memory.setBlockSize (block_size);
+	}
 	~ac_write_through_cache() {
 		if (trace_active) delete cache_trace;
 	}
@@ -202,16 +243,54 @@ class ac_write_through_cache {
 	const cpu_word *read(address a, unsigned length) {
 
 		    //printf("\nAC_CACHE WT::read -> address=%x  length=%d", a, length);
-
+			//cout << "ID: " << getId() <<endl;
 			address b = byte_to_word(a);
-			if (!cache.get_block_for_read(b)) {
-				cache.get_available_block();
+			//if (!cache.get_block_for_read(b) || !memory.check_dir((uint32_t) a, getId())) {
+			
+			if(a == 0x20000000){
 				a = a/block_size*block_size;
-				const cpu_word *d = memory.read_block(a, block_size);
-				cache.write_block(d);
-				cache.block_status().set_valid();
+				//cout << "cache read lock..." <<endl;
+				const cpu_word *d = memory.read_block(a, length);
+				//cout << "READ LOCK: " << *d << " PROC: " << getId()<< endl;
+				return d;
 			}
+			//cout << "READ EM LOOP address: " << a << " length: " << length <<endl;
+			a = a/block_size*block_size;
+			int cacheIndex=0;
+			/*
+			bool pepino=false;
+			if(a == 56256)
+				pepino = true;
+			if(a == 56240)
+				pepino = true;
+				*/
+			//if (!cache.get_block_for_read(b)) {
+			//if (!memory.check_dir((uint32_t) a, getId())) {
+				
+				//cout << "predicacao do check_dir:" << memory.check_dir((uint32_t) a, getId())<<endl;
+				//memory.check_dir((uint32_t) a, getId());
+				//
+				//cout << "CHECK_DIR" <<endl;
+				bool cdir = (!(memory.check_dir((uint32_t) a, getId())));
+				
+					if ( !cache.get_block_for_read(b) || cdir) {
+					//if (!cache.get_block_for_read(b) || true){
+						cacheIndex = cache.get_available_block();
+						//cout << "cache read cacheIndex: "<< cacheIndex << endl;
+						//cout << "READ_DIR" <<endl;
+						memory.read_dir((uint32_t) a, cacheIndex, getId());
+						const cpu_word *d = memory.read_block(a, block_size);
+						cache.write_block(d);
+						cache.block_status().set_valid();
+					}
+			//}
+			
 			if (trace_active) cache_trace->add(trace_read, word_to_byte(b), length);
+			
+			//const cpu_word *d = memory.read_block(a, block_size);
+			//const cpu_word *cached = cache.read_block();
+			//if(*cached != *d)
+			//	cout << "INCORRETO" <<endl;	
 			return cache.read_block_single();
 		}
 
@@ -219,17 +298,50 @@ class ac_write_through_cache {
 
 			//printf("\nAC_CACHE WT::write -> address=%x  length=%d", a, length);
    		    address b = byte_to_word(a);
-
-			if (!cache.get_block_for_write(b)) {
-				cache.get_available_block();
-				a = a/block_size*block_size;
-				const cpu_word *tmp_d = memory.read_block(a, block_size);
-				cache.write_block(tmp_d);
-				cache.block_status().set_valid();
+   		    
+			if(a == 0x20000000){
+			a = a/block_size*block_size;
+			//cout << "cache write lock..." <<endl;
+			//cout << "WRITE LOCK: " << *d << " PROC: " << getId() << endl;
+			memory.write_block(a, d, length);
+			return;	
 			}
+			a = a/block_size*block_size;
+			int cacheIndex=0;
+			/*
+			bool pepino=false;
+			if(a == 56256)
+				pepino = true;
+			if(a == 56240)
+				pepino = true;	
+				*/
+			//cout << "cache write cacheIndex: "<< cacheIndex << endl;
+			
+			//cout << "predicacao do check_dir:" << memory.check_dir((uint32_t) a, getId())<<endl;
+			//
+			//cout << "CHECK_DIR" <<endl;
+			bool cdir;
+			cdir = (!(memory.check_dir((uint32_t) a, getId())));
+				if (!cache.get_block_for_write(b) || cdir) {
+				//if (!cache.get_block_for_write(b) || true){
+					cacheIndex = cache.get_available_block();
+					//cout << "READ_DIR" <<endl;
+					memory.read_dir((uint32_t) a, cacheIndex, getId());
+					const cpu_word *tmp_d = memory.read_block(a, block_size);
+					cache.write_block(tmp_d);
+					cache.block_status().set_valid();
+				}
 			if (trace_active) cache_trace->add(trace_write, word_to_byte(b), length);
+			
+			//const cpu_word *dd = memory.read_block(a, block_size);
+			//const cpu_word *cached = cache.read_block();
+			//if(*cached != *dd)
+			//	cout << "INCORRETO" <<endl;
+				
 			cache.write_block_single(d, length);
             memory.write_block(word_to_byte(cache.block_address()), cache.read_block(),block_size);
+            //cout <<"WRITE_DIR" <<endl;
+            memory.write_dir((uint32_t) a, cacheIndex, getId());
 	}
 
 
